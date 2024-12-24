@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uzm. Dr. Dt. Bedia Sert - Diş Hekimi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="/styles/main.css" rel="stylesheet">
+</head>
+<body class="font-sans">
+    <!-- Header -->
+    <header class="fixed w-full bg-white shadow-md z-50">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <div class="logo">
+                <h1 class="text-2xl font-bold text-blue-600">Uzm. Dr. Dt. Bedia Sert</h1>
+            </div>
+            <div class="flex items-center space-x-6">
+                <a href="#home" class="nav-link">Ana Sayfa</a>
+                <a href="#about" class="nav-link">Hakkımda</a>
+                <a href="#treatments" class="nav-link">Tedaviler</a>
+                <a href="#cases" class="nav-link">Vakalarım</a>
+                <a href="#contact" class="nav-link">İletişim</a>
+                <div class="language-dropdown">
+                    <button class="nav-link flex items-center">
+                        <span id="currentLang">TR</span>
+                        <i class="fas fa-chevron-down ml-1"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <button data-lang="tr" class="language-btn">Türkçe</button>
+                        <button data-lang="en" class="language-btn">English</button>
+                        <button data-lang="de" class="language-btn">Deutsch</button>
+                        <button data-lang="fr" class="language-btn">Français</button>
+                        <button data-lang="es" class="language-btn">Español</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Ana Sayfa -->
+    <section id="home" class="min-h-screen flex items-center pt-20">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4">Sağlıklı Gülüşler, Mutlu Yüzler</h1>
+                <p class="text-xl mb-8">Daha parlak ve sağlıklı bir gülüş için bize ulaşın. Uzman diş hekimliği hizmetlerimizle yanınızdayız.</p>
+                <button id="appointmentBtn" class="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition">
+                    Randevu Al
+                </button>
+            </div>
+            <div class="md:w-1/2 mt-10 md:mt-0">
+                <img src="/images/hero-image.jpeg" alt="Diş Hekimliği" class="rounded-lg shadow-xl">
+            </div>
+        </div>
+    </section>
+
+    <!-- Randevu Modal -->
+    <div id="appointmentModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50">
+        <div class="bg-white rounded-lg p-8 max-w-md mx-auto mt-20">
+            <h2 class="text-2xl font-bold mb-4">Randevu Formu</h2>
+            <form id="appointmentForm">
+                <div class="mb-4">
+                    <label class="block mb-2">Ad-Soyad</label>
+                    <input type="text" name="name" required class="w-full p-2 border rounded">
+                </div>
+                <div class="mb-4">
+                    <label class="block mb-2">E-posta</label>
+                    <input type="email" name="email" required class="w-full p-2 border rounded">
+                </div>
+                <div class="mb-4">
+                    <label class="block mb-2">Telefon</label>
+                    <input type="tel" name="phone" required class="w-full p-2 border rounded">
+                </div>
+                <div class="mb-4">
+                    <label class="block mb-2">Mesaj</label>
+                    <textarea name="message" rows="4" class="w-full p-2 border rounded"></textarea>
+                </div>
+                <div class="flex justify-end space-x-4">
+                    <button type="button" id="cancelAppointment" class="px-4 py-2 border rounded">İptal</button>
+                    <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded">Gönder</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Hakkımda -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold mb-12 text-center">Hakkımda</h2>
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/3">
+                    <img src="/images/doctor-profile.jpeg" alt="Dr. Bedia Sert" class="rounded-lg shadow-xl w-full">
+                </div>
+                <div class="md:w-2/3 space-y-6">
+                    <p class="text-lg leading-relaxed">
+                        Merhaba, ben Uzm. Dr. Dt. Bedia Sert. İstanbul Üniversitesi(Çapa) Diş Hekimliği Fakültesi'nden mezun olduktan sonra, diş hekimliği alanında kariyerimi şekillendirdim. Şu anda Sağlık Bilimleri Üniversitesi'nde protez alanında doktora yapmaktayım.
+                    </p>
+                    <p class="text-lg leading-relaxed">
+                        Meslek hayatımda, yüzlerce hastayı tedavi ederek daha iyi gülüşlere kavuşturdum. Özellikle kompleks protez tedavilerinde edindiğim tecrübelerle, hastalarıma uzun ömülü ve kaliteli çözümler sunuyorum.
+                    </p>
+                    <p class="text-lg leading-relaxed">
+                        Estetik ve fonksiyonel diş hekimliği hizmetlerimi, hasta memnuniyetini odak alarak yürütüyor ve her tedaviye yenilikçi bir yaklaşımla yaklaşıyorum.
+                    </p>
+                    <div class="flex flex-wrap gap-6 mt-8">
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-graduation-cap text-blue-600 text-2xl"></i>
+                            <span>İstanbul Üniversitesi(Çapa) Diş Hekimliği Fakültesi</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-certificate text-blue-600 text-2xl"></i>
+                            <span>Protez Uzmanı</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tedaviler -->
+    <section id="treatments" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold mb-12 text-center">Tedaviler</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Tam Protez -->
+                <div class="treatment-card">
+                    <div class="text-blue-600 text-4xl mb-4">
+                        <i class="fas fa-teeth"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Tam Protez</h3>
+                    <p class="text-gray-600">Eksik dişlerin tamamının yerine getirilmesi için tasarlanan protezlerdir. Doğal görünüm ve rahat kullanım sunar.</p>
+                </div>
+
+                <!-- Parsiyel Protez -->
+                <div class="treatment-card">
+                    <div class="text-blue-600 text-4xl mb-4">
+                        <i class="fas fa-tooth"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Parsiyel Protez</h3>
+                    <p class="text-gray-600">Kısmi diş eksikliklerinde tercih edilen, sağlam dişlerden destek alan protezlerdir.</p>
+                </div>
+
+                <!-- İmplant Destekli Protez -->
+                <div class="treatment-card">
+                    <div class="text-blue-600 text-4xl mb-4">
+                        <i class="fas fa-teeth-open"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">İmplant Destekli Protez</h3>
+                    <p class="text-gray-600">Diş kaybı yaşayan hastalar için kalıcı ve estetik çözüm sunan, implant üzerine yerleştirilen protezlerdir.</p>
+                </div>
+
+                <!-- Estetik Kaplamalar -->
+                <div class="treatment-card">
+                    <div class="text-blue-600 text-4xl mb-4">
+                        <i class="fas fa-smile"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Estetik Kaplamalar</h3>
+                    <p class="text-gray-600">Dişlerin şeklini, rengini ve yapısını iyileştirmek için uygulanan porselen kaplamalardır.</p>
+                </div>
+
+                <!-- Zirkonyum Kaplama -->
+                <div class="treatment-card">
+                    <div class="text-blue-600 text-4xl mb-4">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Zirkonyum Kaplama</h3>
+                    <p class="text-gray-600">Yüksek dayanıklılığı ve doğal görünümü ile estetik ve fonksiyonel bir tedavi seçeneğidir.</p>
+                </div>
+
+                <!-- Laminate Veneer -->
+                <div class="treatment-card">
+                    <div class="text-blue-600 text-4xl mb-4">
+                        <i class="fas fa-magic"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Laminate Veneer</h3>
+                    <p class="text-gray-600">Dişlerin ön yüzeyine uygulanan, ince yaprak porselenlerle estetik gülüş tasarımı sunan tedavidir.</p>
+                </div>
+
+                <!-- Diş Beyazlatma -->
+                <div class="treatment-card">
+                    <div class="text-blue-600 text-4xl mb-4">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Diş Beyazlatma</h3>
+                    <p class="text-gray-600">Dişlerdeki lekeleri ve sarılıkları gidermek için uygulanan etkili bir tedavi yöntemidir.</p>
+                </div>
+
+                <!-- Çene Tedavileri -->
+                <div class="treatment-card">
+                    <div class="text-blue-600 text-4xl mb-4">
+                        <i class="fas fa-bone"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Çene Tedavileri</h3>
+                    <p class="text-gray-600">Çene eklemi problemleri ve kapanış bozuklukları için geliştirilmiş tedavi yöntemleridir.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vakalarım -->
+    <section id="cases" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold mb-12 text-center">Vakalarım</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Vaka 1 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg">
+                    <img src="/images/case1.jpeg" alt="Kompleks İmplant Tedavisi" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Kompleks İmplant Tedavisi</h3>
+                        <p class="text-gray-600 mb-4">Zorlu çene kemiği vakasında implant uygulaması.</p>
+                        <button class="case-details-btn text-blue-600 font-semibold hover:text-blue-800">
+                            Detaylı İncele
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Vaka 2 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg">
+                    <img src="/images/case2.jpeg" alt="Estetik Laminate Veneer" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Estetik Laminate Veneer</h3>
+                        <p class="text-gray-600 mb-4">Estetik bir gülüş için laminate veneer uygulaması.</p>
+                        <button class="case-details-btn text-blue-600 font-semibold hover:text-blue-800">
+                            Detaylı İncele
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- İletişim -->
+    <section id="contact" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold mb-12 text-center">İletişim</h2>
+            <div class="flex flex-col md:flex-row gap-12">
+                <div class="md:w-1/2">
+                    <form id="contactForm" class="space-y-6">
+                        <div>
+                            <label class="block mb-2">Ad-Soyad</label>
+                            <input type="text" name="name" required class="w-full p-3 border rounded-lg">
+                        </div>
+                        <div>
+                            <label class="block mb-2">E-posta</label>
+                            <input type="email" name="email" required class="w-full p-3 border rounded-lg">
+                        </div>
+                        <div>
+                            <label class="block mb-2">Telefon</label>
+                            <input type="tel" name="phone" required class="w-full p-3 border rounded-lg">
+                        </div>
+                        <div>
+                            <label class="block mb-2">Mesaj</label>
+                            <textarea name="message" rows="4" class="w-full p-3 border rounded-lg"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition">
+                            Gönder
+                        </button>
+                    </form>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <h3 class="text-2xl font-bold mb-6">İletişim Bilgileri</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-4">
+                                <i class="fas fa-phone text-blue-600 text-xl"></i>
+                                <span>+90 553 967 97 07</span>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <i class="fas fa-envelope text-blue-600 text-xl"></i>
+                                <span>dt.bediaerdogansert@gmail.com</span>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <i class="fas fa-map-marker-alt text-blue-600 text-xl"></i>
+                                <span>İstanbul, Türkiye</span>
+                            </div>
+                        </div>
+
+                        <h3 class="text-2xl font-bold mt-8 mb-6">Çalışma Saatleri</h3>
+                        <div class="space-y-2">
+                            <div class="flex justify-between">
+                                <span>Hafta İçi:</span>
+                                <span>10:00 - 19:00</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Cumartesi:</span>
+                                <span>10:00 - 19:00</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Pazar:</span>
+                                <span>Kapalı</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div>
+                    <h4 class="text-xl font-bold mb-4">İletişim Bilgileri</h4>
+                    <div class="space-y-2">
+                        <p>Telefon: +90 553 967 97 07</p>
+                        <p>E-posta: dt.bediaerdogansert@gmail.com</p>
+                        <p>Adres: İstanbul, Türkiye</p>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Çalışma Saatleri</h4>
+                    <div class="space-y-2">
+                        <p>Hafta İçi: 10:00 - 19:00</p>
+                        <p>Cumartesi: 10:00 - 19:00</p>
+                        <p>Pazar: Kapalı</p>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Sosyal Medya</h4>
+                    <a href="https://www.instagram.com/dt.bediasert/" target="_blank" class="flex items-center space-x-2 hover:text-blue-400 transition">
+                        <i class="fab fa-instagram text-2xl"></i>
+                        <span>@dt.bediasert</span>
+                    </a>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-800 text-center">
+                <p>&copy; 2023 Uzm. Dr. Dt. Bedia Sert. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/main.js"></script>
+    <script src="/js/translations/tr.js"></script>
+    <script src="/js/translations/en.js"></script>
+    <script src="/js/translations/de.js"></script>
+    <script src="/js/translations/fr.js"></script>
+    <script src="/js/translations/es.js"></script>
+</body>
+</html> 

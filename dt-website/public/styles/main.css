@@ -99,17 +99,23 @@ body {
 }
 
 .dropdown-content {
-    display: none;
+    visibility: hidden;
+    opacity: 0;
     position: absolute;
+    top: 100%;
+    right: 0;
     background-color: white;
     min-width: 160px;
     box-shadow: 0 8px 16px rgba(0,0,0,0.1);
     z-index: 1000;
     border-radius: 0.5rem;
+    transition: visibility 0s, opacity 0.2s;
+    margin-top: 0;
 }
 
 .language-dropdown:hover .dropdown-content {
-    display: block;
+    visibility: visible;
+    opacity: 1;
 }
 
 .language-btn {
@@ -127,9 +133,20 @@ body {
     background-color: #f3f4f6;
 }
 
-/* Dropdown menünün görünür kalmasını sağlayan yeni stil */
-.dropdown-content:hover {
-    display: block;
+/* Mobil görünüm için dropdown ayarları */
+@media (max-width: 768px) {
+    .dropdown-content {
+        position: static;
+        visibility: visible;
+        opacity: 1;
+        display: none;
+        box-shadow: none;
+        margin-top: 0.5rem;
+    }
+
+    .language-dropdown:hover .dropdown-content {
+        display: block;
+    }
 }
 
 /* Responsive Düzenlemeler */

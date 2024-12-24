@@ -1,4 +1,19 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Mobil menü işlemleri
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    
+    menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    // Mobil menüde link tıklandığında menüyü kapat
+    document.querySelectorAll('#mobileMenu a').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+    });
+
     // Dil değişkenleri
     let currentLang = 'tr';
     const translations = { tr, en, de, fr, es };

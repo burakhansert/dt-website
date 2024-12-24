@@ -9,18 +9,48 @@
 body {
     color: var(--text-color);
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 /* Navigasyon */
 .nav-link {
     color: var(--text-color);
     font-weight: 500;
-    padding: 0.5rem 1rem;
     transition: color 0.2s;
+    display: block;
+    padding: 0.5rem 1rem;
 }
 
 .nav-link:hover {
     color: var(--primary-color);
+}
+
+/* Mobil Menü */
+@media (max-width: 768px) {
+    #mobileMenu {
+        background-color: white;
+        width: 100%;
+        padding: 1rem 0;
+    }
+
+    .nav-link {
+        padding: 0.75rem 1rem;
+        border-bottom: 1px solid var(--light-gray);
+    }
+
+    .language-dropdown {
+        padding: 0.75rem 1rem;
+    }
+
+    .dropdown-content {
+        position: static !important;
+        box-shadow: none !important;
+        margin-top: 0.5rem !important;
+    }
+
+    .language-btn {
+        padding: 0.5rem 1rem !important;
+    }
 }
 
 /* Butonlar */
@@ -30,6 +60,13 @@ body {
     padding: 0.75rem 1.5rem;
     border-radius: 0.5rem;
     transition: background-color 0.2s;
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .btn-primary {
+        width: auto;
+    }
 }
 
 .btn-primary:hover {
@@ -40,37 +77,19 @@ body {
 .treatment-card {
     background: white;
     border-radius: 1rem;
-    padding: 2rem;
+    padding: 1.5rem;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s;
 }
 
+@media (min-width: 768px) {
+    .treatment-card {
+        padding: 2rem;
+    }
+}
+
 .treatment-card:hover {
     transform: translateY(-5px);
-}
-
-/* Animasyonlar */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.animate-fade-in {
-    animation: fadeIn 0.5s ease-out forwards;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .container {
-        padding-left: 1rem;
-        padding-right: 1rem;
-    }
 }
 
 /* Dil Seçici Dropdown */
@@ -106,4 +125,50 @@ body {
 
 .language-btn:hover {
     background-color: var(--light-gray);
+}
+
+/* Responsive Düzenlemeler */
+@media (max-width: 768px) {
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    section {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    .grid {
+        gap: 1rem;
+    }
+}
+
+/* Form Elemanları */
+input, textarea, select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Modal */
+.modal {
+    padding: 1rem;
+}
+
+@media (min-width: 768px) {
+    .modal {
+        padding: 2rem;
+    }
 } 

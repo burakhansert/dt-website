@@ -231,4 +231,32 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // Dil seçimi dropdown kontrolü
+    const langDropdownBtn = document.getElementById('langDropdownBtn');
+    const langDropdownContent = document.getElementById('langDropdownContent');
+
+    // Dropdown'ı aç/kapat
+    langDropdownBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        langDropdownContent.classList.toggle('show');
+    });
+
+    // Sayfa herhangi bir yerine tıklandığında dropdown'ı kapat
+    document.addEventListener('click', (e) => {
+        if (!langDropdownContent.contains(e.target)) {
+            langDropdownContent.classList.remove('show');
+        }
+    });
+
+    // Dil seçimi yapıldığında
+    const languageBtns = document.querySelectorAll('.language-btn');
+    languageBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const lang = btn.getAttribute('data-lang');
+            document.getElementById('currentLang').textContent = lang.toUpperCase();
+            langDropdownContent.classList.remove('show');
+            // Burada dil değiştirme fonksiyonunu çağırabilirsiniz
+        });
+    });
 }); 
